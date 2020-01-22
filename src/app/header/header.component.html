@@ -1,0 +1,17 @@
+<section id="header">
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h3>WIPRO Bank</h3>
+		</div>
+	</div>
+  <div class="row">
+    <div *ngIf="currentUser != null" class="col text-left">
+			<h6>Welcome {{ currentUser }}</h6>
+		</div>
+		<div *ngIf="currentUser != null" class="col text-right">
+			<button class="btn-primary btn" (click)="onSignOut();">Sign out</button>
+		</div>
+	</div>
+</div>
+</section>
