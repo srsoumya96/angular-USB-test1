@@ -6,6 +6,7 @@ export class RestService {
   currentUser : string;
   onSignUp(signUpVals) {
     console.log(signUpVals);
+    this.router.navigate(['/']);
   }
   onSignIn(signInVals) {
     console.log(signInVals);
