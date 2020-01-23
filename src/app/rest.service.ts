@@ -4,8 +4,8 @@ import  { Router } from '@angular/router';
 @Injectable()
 export class RestService {
   currentUser : string;
-  onSignUp() {
-    console.log("Enter the details.");
+  onSignUp(signUpVals) {
+    console.log(signUpVals);
   }
   onSignIn(user, pwd, remop) {
     if(remop == true) {
