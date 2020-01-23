@@ -17,6 +17,10 @@ export class RestService {
     }
     this.router.navigate(['/dashboard']);
   }
+  checkLogin() {
+    if(this.router.url != "/signup")
+      sessionStorage.currentUser == null ? this.router.navigate(['/']) : {};
+  }
   getCurrentUser() {
     return sessionStorage.getItem('currentUser');
   }
