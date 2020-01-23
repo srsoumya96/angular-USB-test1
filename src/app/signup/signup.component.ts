@@ -9,12 +9,14 @@ import { RestService } from '../rest.service';
 })
 export class SignupComponent implements OnInit {
 
-  user : string;
-  pwd : string;
-  onSubmit(user, pwd) {
-    this.user = user;
-    this.pwd = pwd;
-    this.rs.onSignUp(user);
+  name : string;
+  userName : string;
+  guardianName : string;
+  dob : Date;
+  password : string;
+
+  onSubmit() {
+    console.log(this.dob);
   }
 
   constructor(private router : Router, private rs : RestService) { }
