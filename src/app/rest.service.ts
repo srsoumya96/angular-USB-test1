@@ -7,13 +7,14 @@ export class RestService {
   onSignUp(signUpVals) {
     console.log(signUpVals);
   }
-  onSignIn(user, pwd, remop) {
-    if(remop == true) {
-      localStorage.setItem('currentUser', user);
-      sessionStorage.setItem('currentUser', user);
+  onSignIn(signInVals) {
+    console.log(signInVals);
+    if(signInVals.remop == true) {
+      localStorage.setItem('currentUser', signInVals.userName);
+      sessionStorage.setItem('currentUser', signInVals.userName);
     }
     else {
-      sessionStorage.setItem('currentUser', user);
+      sessionStorage.setItem('currentUser', signInVals.userName);
     }
     this.router.navigate(['/dashboard']);
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import  { Router } from '@angular/router';
 import { RestService } from '../rest.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -9,20 +10,31 @@ import { RestService } from '../rest.service';
 })
 export class SigninComponent implements OnInit {
 
-   userName : string;
-   password : string;
-   remop : boolean;
-  onSubmit(user, pwd, remop) {
-    this.rs.onSignIn(user, pwd, remop);
-  }
+  signInForm : FormGroup;
 
-  constructor(private router : Router, private rs : RestService) { 
+  signInVals = {
+    "userName" : '',
+    "password" : '',
+    "remop" : false
+  }
+  
+  constructor(private router : Router, private formBuilder: FormBuilder, private rs : RestService) { 
      
    }
 
   ngOnInit() {
-    localStorage.currentUser != null ? this.userName = localStorage.currentUser : {};
-     localStorage.password != null ? this.password = localStorage.password : {};
+    this.signInForm = this.formBuilder.group ({
+      userName : localStorage.currentUser,
+      password : '',
+      remop : false
+    })
   }
+  get f() { return this.signInForm.controls; }
 
+  onSubmit() {
+    this.signInVals.userName = this.f.userName.value;
+    this.signInVals.password = this.f.password.value;
+    this.signInVals.remop = this.f.remop.value;
+    this.rs.onSignIn(this.signInVals);
+  }
 }

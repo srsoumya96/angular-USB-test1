@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-  signupForm : FormGroup;
+  signUpForm : FormGroup;
   signUpVals = {
     "name" : '',
     "userName" : '',
@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
   constructor(private router : Router, private formBuilder: FormBuilder, private rs : RestService) { }
 
   ngOnInit() {
-    this.signupForm = this.formBuilder.group({
+    this.signUpForm = this.formBuilder.group({
       name : '',
       userName : '',
       guardianName : '',
@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
     );
   }
 
-  get f() { return this.signupForm.controls; }
+  get f() { return this.signUpForm.controls; }
 
   onSubmit() {
     this.signUpVals.name = this.f.name.value;
