@@ -23,6 +23,7 @@ export class SigninComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.rs.getProfiles();
     this.signInForm = this.formBuilder.group ({
       userName : localStorage.currentUser,
       password : '',

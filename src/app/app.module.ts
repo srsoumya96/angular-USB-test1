@@ -13,11 +13,13 @@ import { RestService } from './rest.service';
 import { SigninComponent } from './signin/signin.component';
 import { FooterComponent } from './footer/footer.component';
 import { modelLogin } from './modelLogin';
+import { ProfileComponent } from './profile/profile.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing, ReactiveFormsModule, HttpClientInMemoryWebApiModule.forRoot(modelLogin), HttpClientModule ],
-  declarations: [ AppComponent, SignupComponent, HeaderComponent, DashboardComponent, SigninComponent, FooterComponent ],
+  declarations: [ AppComponent, SignupComponent, HeaderComponent, DashboardComponent, SigninComponent, FooterComponent, ProfileComponent, AboutUsComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [RestService]
+  providers: [ RestService ]
 })
 export class AppModule { }
