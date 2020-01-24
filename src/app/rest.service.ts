@@ -9,9 +9,12 @@ export class RestService {
   profiles : any;
   url = 'app/model';
   onSignUp(signUpVals) {
-    this.http.post(this.url, signUpVals);
-    // this.router.navigate(['/']);
-    return true;
+    var headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    this.http.post(this.url, signUpVals, {headers});
+    window.alert('Please Sign In to Continue...');
+    this.router.navigate(['/']);
+
   }
   onSignIn(signInVals) {
     var isPresent = this.profiles.some(function(el){ return el.name === signInVals.userName}) && this.profiles.some(function(el){ return el.password === signInVals.password});
@@ -30,7 +33,8 @@ export class RestService {
   }
   getProfiles () {
     this.http.get(this.url).subscribe(profile => {
-      this.profiles = profile
+      this.profiles = profile,
+      console.log(this.profiles);
     })
   }
   checkLogin() {

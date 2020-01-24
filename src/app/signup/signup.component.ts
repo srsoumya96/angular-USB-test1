@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   signUpVals = {
     "name" : '',
     "userName" : '',
+    'password' : '',
     "guardianName" : '',
     "dob" : ''
   }
@@ -28,6 +29,7 @@ export class SignupComponent implements OnInit {
     this.signUpForm = this.formBuilder.group({
       name : '',
       userName : '',
+      password : '',
       guardianName : '',
       dob : ''
     }
@@ -42,9 +44,11 @@ export class SignupComponent implements OnInit {
     this.signUpVals.guardianName = this.f.guardianName.value;
     this.signUpVals.dob = this.f.dob.value;
 
-    this.signUpSuccess = this.rs.onSignUp(this.signUpVals);
+    this.signUpSuccess = true;
   }
   onRegister() {
     console.log(this.password + ' ' + this.confpassword);
+    this.signUpVals.password = this.password;
+    this.rs.onSignUp(this.signUpVals);
   }
 }
