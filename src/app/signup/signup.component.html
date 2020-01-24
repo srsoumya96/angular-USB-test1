@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="container" id="signUpForm">
+<div *ngIf="!signUpSuccess" class="container" id="signUpForm">
   <form [formGroup]="signUpForm" name="form" (ngSubmit)="onSubmit();" novalidate>
   <div class="row">
     <div class="col-sm-3"></div>
@@ -41,7 +41,20 @@
     </div>
     <div class="col-sm-3"></div>
   </div>
-  <!--div class="row">
+  <div class="row">
+    <div class="col-12 text-center">
+      <button class="btn-primary btn" [disabled]="signUpForm.invalid" type="submit">Sign Up</button>
+    </div>
+  </div>
+  </form>
+  <div class="row">
+    <div class="col-12 text-center p-3">
+      <a [routerLink]="['/']">Already have an account!! Sign In here</a>
+    </div>
+  </div>
+</div>
+<div *ngIf="signUpSuccess" class="container">
+  <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-3">
       <label for="pwd">Password :</label>
@@ -57,19 +70,13 @@
       <label for="pwdcnfrm">Re-Enter Password :</label>
     </div>
     <div class="col-sm-3">
-      <input #pwdcnfrm id="pwdcnfrm" type="password" placeholder="Confirm Password" required>
+      <input #pwdcnfrm="ngModel" [(ngModel)]="confpassword" name="confpassword" id="pwdcnfrm" type="password" placeholder="Confirm Password" required>
     </div>
     <div class="col-sm-3"></div>
-  </div-->
+  </div>
   <div class="row">
     <div class="col-12 text-center">
-      <button class="btn-primary btn" [disabled]="signUpForm.invalid" type="submit">Sign Up</button>
-    </div>
-  </div>
-  </form>
-  <div class="row">
-    <div class="col-12 text-center p-3">
-      <a [routerLink]="['/']">Already have an account!! Sign In here</a>
+      <button class="btn-primary btn" (click)="onRegister();" [disabled]="(password == '' || password != confpassword)">Register</button>
     </div>
   </div>
 </div>

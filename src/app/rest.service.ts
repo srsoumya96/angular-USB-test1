@@ -9,8 +9,9 @@ export class RestService {
   profiles : any;
   url = 'app/model';
   onSignUp(signUpVals) {
-    console.log(signUpVals);
-    this.router.navigate(['/']);
+    this.http.post(this.url, signUpVals);
+    // this.router.navigate(['/']);
+    return true;
   }
   onSignIn(signInVals) {
     var isPresent = this.profiles.some(function(el){ return el.name === signInVals.userName}) && this.profiles.some(function(el){ return el.password === signInVals.password});

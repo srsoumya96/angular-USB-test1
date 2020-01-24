@@ -17,6 +17,10 @@ export class SignupComponent implements OnInit {
     "guardianName" : '',
     "dob" : ''
   }
+  password = '';
+  confpassword = '';
+
+  signUpSuccess = false;
 
   constructor(private router : Router, private formBuilder: FormBuilder, private rs : RestService) { }
 
@@ -38,6 +42,9 @@ export class SignupComponent implements OnInit {
     this.signUpVals.guardianName = this.f.guardianName.value;
     this.signUpVals.dob = this.f.dob.value;
 
-    this.rs.onSignUp(this.signUpVals);
+    this.signUpSuccess = this.rs.onSignUp(this.signUpVals);
+  }
+  onRegister() {
+    console.log(this.password + ' ' + this.confpassword);
   }
 }
