@@ -2,7 +2,14 @@
   margin : 150px auto;
 }
 
-.col-sm-3 {
+.col {
   text-align: center;
   padding: 10px;
+}
+
+.card {
+  background-color: whitesmoke;
+  width: 40%;
+  margin: 10% auto 0;
+  padding: 2%;
 }

@@ -1,0 +1,52 @@
+<app-header></app-header>
+
+<div class="container text-center" id="login-page">
+	<div class="row">
+		<div class="col-sm-6">
+      <div class="card mt-5 pt-5 pb-2">
+        <div><i class="fas fa-user"></i></div>
+        <div>PERSONAL BANKING</div>
+        <div>
+          <button class="btn btn-secondary" (click)="onLogin();">LOGIN </button>
+        </div>
+        <div class="row p-2">
+          <div class="col-sm-3">
+            <a [routerLink]="['/signup']">New User Registration</a>
+          </div>
+          <div class="col-sm-3">
+            <a [routerLink]="['/']">How Do I?</a>
+          </div>
+          <div class="col-sm-3">
+            <a [routerLink]="['/']">Customer Care</a>
+          </div>
+          <div class="col-sm-3">
+            <a [routerLink]="['/']">Lock &amp; Unlock User</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card mt-5 pt-5 pb-2">
+        <div><i class="fas fa-user"></i></div>
+        <div>CORPORATE BANKING</div>
+        <div>
+          <button class="btn btn-secondary" (click)="onCorporateLogin();">LOGIN </button>
+        </div>
+        <div class="row p-2">
+          <div class="col-sm-3">
+            
+          </div>
+          <div class="col-sm-3">
+            <a [routerLink]="['/']">New User Registration</a>
+          </div>
+          <div class="col-sm-3">
+            <a [routerLink]="['/']">How Do I?</a>
+          </div>
+          <div class="col-sm-3">
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
+<app-footer></app-footer>

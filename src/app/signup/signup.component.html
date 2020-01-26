@@ -1,83 +1,77 @@
 <app-header></app-header>
 <div *ngIf="!signUpSuccess" class="container" id="signUpForm">
-  <form [formGroup]="signUpForm" name="form" (ngSubmit)="onSubmit();" novalidate>
+  <div class="card">
+    <form [formGroup]="signUpForm" name="form" (ngSubmit)="onSubmit();" novalidate>
   <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
+    <div class="col">
       <label for="name">Name :</label>
     </div>
-    <div class="col-sm-3">
+    <div class="col">
       <input formControlName="name" id="name" type="text" placeholder="Enter your Name" required>
     </div>
-    <div class="col-sm-3"></div>
   </div>
   <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
+    <div class="col">
       <label for="userName">Username :</label>
     </div>
-    <div class="col-sm-3">
+    <div class="col">
       <input formControlName="userName" type="text" placeholder="Username" required>
     </div>
-    <div class="col-sm-3"></div>
   </div>
   <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
+    <div class="col">
       <label for="guardian">Enter your Father/Spouse Name :</label>
     </div>
-    <div class="col-sm-3">
+    <div class="col">
       <input formControlName="guardianName" name="guardianName" id="guardian" type="text" placeholder="Father/Spouse Name" required>
     </div>
-    <div class="col-sm-3"></div>
   </div>
   <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
+    <div class="col">
       <label for="dob">Date of Birth :</label>
     </div>
-    <div class="col-sm-3">
+    <div class="col">
       <input formControlName="dob" name="dob" id="dob" type="date" required>
     </div>
-    <div class="col-sm-3"></div>
   </div>
   <div class="row">
-    <div class="col-12 text-center">
+    <div class="col text-center">
       <button class="btn-primary btn" [disabled]="signUpForm.invalid" type="submit">Sign Up</button>
     </div>
   </div>
   </form>
+  </div>
+  
   <div class="row">
-    <div class="col-12 text-center p-3">
-      <a [routerLink]="['/']">Already have an account!! Sign In here</a>
+    <div class="col text-center p-3">
+      <a [routerLink]="['/login']">Already have an account!! Sign In here</a>
     </div>
   </div>
 </div>
 <div *ngIf="signUpSuccess" class="container" id="signUpForm2">
-  <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
+  <div class="card">
+    <div class="row">
+    <div class="col">
       <label for="pwd">Password :</label>
     </div>
-    <div class="col-sm-3">
+    <div class="col">
       <input #pwd="ngModel" [(ngModel)]="password" name="password" id="pwd" type="password" placeholder="Password" required>
     </div>
-    <div class="col-sm-3"></div>
   </div>
   <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3">
+    <div class="col">
       <label for="pwdcnfrm">Re-Enter Password :</label>
     </div>
-    <div class="col-sm-3">
+    <div class="col">
       <input #pwdcnfrm="ngModel" [(ngModel)]="confpassword" name="confpassword" id="pwdcnfrm" type="password" placeholder="Confirm Password" required>
     </div>
-    <div class="col-sm-3"></div>
   </div>
   <div class="row">
-    <div class="col-12 text-center">
+    <div class="col text-center">
       <button class="btn-primary btn" (click)="onRegister();" [disabled]="(password == '' || password != confpassword)">Register</button>
     </div>
   </div>
+  </div>
+  
 </div>
 <app-footer></app-footer>

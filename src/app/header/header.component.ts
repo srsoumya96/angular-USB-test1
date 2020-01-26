@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   
 
   ngOnInit() {
-    this.rs.checkLogin();
+    //this.rs.checkLogin();
   }
 
 }

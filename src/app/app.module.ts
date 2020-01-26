@@ -15,10 +15,11 @@ import { FooterComponent } from './footer/footer.component';
 import { modelLogin } from './modelLogin';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, routing, ReactiveFormsModule, HttpClientInMemoryWebApiModule.forRoot(modelLogin), HttpClientModule ],
-  declarations: [ AppComponent, SignupComponent, HeaderComponent, DashboardComponent, SigninComponent, FooterComponent, ProfileComponent, AboutUsComponent ],
+  declarations: [ AppComponent, SignupComponent, HeaderComponent, DashboardComponent, SigninComponent, FooterComponent, ProfileComponent, AboutUsComponent, LoginPageComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ RestService ]
 })

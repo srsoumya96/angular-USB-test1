@@ -38,7 +38,7 @@ export class RestService {
     })
   }
   checkLogin() {
-    if(this.router.url != "/signup")
+    if(this.router.url != "" || this.router.url != "/signup")
       sessionStorage.currentUser == null ? this.router.navigate(['/']) : {};
   }
   getCurrentUser() {
