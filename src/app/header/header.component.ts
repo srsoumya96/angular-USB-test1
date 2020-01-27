@@ -14,8 +14,6 @@ export class HeaderComponent implements OnInit {
   constructor(private rs : RestService) {
    }
 
-  
-
   ngOnInit() {
     //this.rs.checkLogin();
   }

@@ -1,20 +1,64 @@
 <section id="header">
-<div class="container">
-	<div class="row">
-		<div class="col">
-			<h3>WIPRO Bank</h3>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h3>WIPRO Bank</h3>
+			</div>
+		</div>
+		<!-- <div class="row">
+			<div *ngIf="currentUser != null" class="col text-right">
+				<button class="btn-primary btn" (click)="onSignOut();">Sign out</button>
+			</div>
+		</div> -->
+		<div class="row pt-2">
+			<div class="col">
+				<nav class="navbar navbar-expand-md navbar-light">
+          <div *ngIf="currentUser != null" class="col text-left">
+            <a class="navbar-brand" [routerLink]="['/dashboard']">Welcome {{ currentUser }}</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#">Products &amp; Services </a>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">How Do I </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="#">WIPRO Anywhere </a>
+                <div class="dropdown-content">
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us </a>
+              </li>
+              <li *ngIf="currentUser" class="nav-item dropdown">
+                <a class="nav-link" [routerLink]="['/profile']">My Profile </a>
+                <div class="dropdown-content">
+                  <a href="#">Dashboard</a>
+                  <a href="#">My Account</a>
+                  <a href="#">General Settings</a>
+                  <a class="btn-danger btn" (click)="onSignOut();">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+			</div>
 		</div>
 	</div>
-  <div class="row">
-    <div *ngIf="currentUser != null" class="col text-left">
-			<h6>Welcome {{ currentUser }}</h6>
-		</div>
-		<div *ngIf="currentUser != null" class="col text-right">
-			<button class="btn-primary btn" (click)="onSignOut();">Sign out</button>
-		</div>
-	</div>
-  <div class="row">
-    
-  </div>
-</div>
 </section>

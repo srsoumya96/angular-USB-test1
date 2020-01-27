@@ -15,7 +15,7 @@ export class SignupComponent implements OnInit {
     "name" : '',
     "userName" : '',
     'password' : '',
-    "guardianName" : '',
+    "emailId" : '',
     "dob" : ''
   }
   password = '';
@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
       name : '',
       userName : '',
       password : '',
-      guardianName : '',
+      emailId : '',
       dob : ''
     }
     );
@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
   onSubmit() {
     this.signUpVals.name = this.f.name.value;
     this.signUpVals.userName = this.f.userName.value;
-    this.signUpVals.guardianName = this.f.guardianName.value;
+    this.signUpVals.emailId = this.f.emailId.value;
     this.signUpVals.dob = this.f.dob.value;
 
     this.signUpSuccess = true;
