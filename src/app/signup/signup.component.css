@@ -1,5 +1,5 @@
 #signUpForm, #signUpForm2 {
-  margin : 100px auto;
+  margin : 5% auto;
 }
 
 .col {
@@ -10,6 +10,6 @@
 .card {
   background-color: whitesmoke;
   width: 40%;
-  margin: 10% auto 0;
+  margin: 5% auto 0;
   padding: 2%;
 }
